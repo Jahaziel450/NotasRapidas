@@ -4,42 +4,58 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 
 /**
  * Actividad principal (único punto de entrada de la app).
- * Controla la navegación simple entre dos pantallas:
- * 1) Lista de notas
- * 2) Crear / editar nota
- *
- * No usamos una librería de navegación externa a propósito: para una app
- * tan pequeña, un simple "estado de pantalla actual" es más fácil de leer
- * y de explicar en el reporte del proyecto.
+ * Controla la navegación fluida con animaciones entre la lista de notas y la edición.
  */
 class MainActivity : ComponentActivity() {
 
-    // "by viewModels()" crea y conserva el ViewModel mientras viva la Activity,
-    // incluso si la pantalla rota o se recompone.
     private val viewModel: NoteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Manejamos el estado del tema oscuro a nivel de actividad
-            var darkTheme by remember { mutableStateOf(false) }
-            
-            // Definimos esquemas de colores básicos para soportar el cambio
-            val colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme()
+            val systemInDark = isSystemInDarkTheme()
+            var darkTheme by remember { mutableStateOf(systemInDark) }
+
+            // Esquema de colores personalizado para un tema Claro u Oscuro elegante y contrastado
+            val colorScheme = if (darkTheme) {
+                darkColorScheme(
+                    primary = Color(0xFFFFD54F),       // Amarillo cálido para resaltar
+                    onPrimary = Color(0xFF1F1B00),
+                    surface = Color(0xFF1E1E1E),
+                    background = Color(0xFF121212),
+                    onBackground = Color(0xFFE0E0E0)
+                )
+            } else {
+                lightColorScheme(
+                    primary = Color(0xFFD84315),       // Tono ámbar/cálido tipo libreta
+                    onPrimary = Color.White,
+                    surface = Color(0xFFFFFDE7),
+                    background = Color(0xFFFFFDE7),
+                    onBackground = Color(0xFF212121)
+                )
+            }
 
             MaterialTheme(colorScheme = colorScheme) {
                 Surface(
-                    modifier = Modifier,
+                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     AppNavigation(
@@ -54,10 +70,9 @@ class MainActivity : ComponentActivity() {
 }
 
 /**
- * Controla qué pantalla se muestra:
+ * Controla la navegación con animaciones suaves de deslizamiento e intensidad:
  * - null           -> lista de notas
- * - Note(id == 0)  -> pantalla de "nota nueva"
- * - Note existente -> pantalla de edición con los datos ya cargados
+ * - NoteEditState  -> pantalla de edición/creación de nota
  */
 @Composable
 fun AppNavigation(
@@ -67,8 +82,24 @@ fun AppNavigation(
 ) {
     var pantallaEdicion by remember { mutableStateOf<NotaEditState?>(null) }
 
-    when (val estado = pantallaEdicion) {
-        null -> {
+    AnimatedContent(
+        targetState = pantallaEdicion,
+        transitionSpec = {
+            if (targetState != null) {
+                // Al abrir la pantalla de edición: deslicar desde la derecha con fade
+                (slideInHorizontally { width -> width } + fadeIn()).togetherWith(
+                    slideOutHorizontally { width -> -width / 3 } + fadeOut()
+                )
+            } else {
+                // Al volver a la lista: deslizar hacia la derecha con fade
+                (slideInHorizontally { width -> -width / 3 } + fadeIn()).togetherWith(
+                    slideOutHorizontally { width -> width } + fadeOut()
+                )
+            }
+        },
+        label = "NavegacionTransicion"
+    ) { estado ->
+        if (estado == null) {
             NoteListScreen(
                 viewModel = viewModel,
                 onNoteClick = { nota -> pantallaEdicion = NotaEditState(nota) },
@@ -76,8 +107,7 @@ fun AppNavigation(
                 darkTheme = darkTheme,
                 onToggleTheme = onToggleTheme
             )
-        }
-        else -> {
+        } else {
             NoteEditScreen(
                 existingNote = estado.nota,
                 viewModel = viewModel,
@@ -88,5 +118,5 @@ fun AppNavigation(
     }
 }
 
-// Clase auxiliar para representar "estamos en modo edición, con esta nota (o ninguna)".
+// Clase auxiliar para representar el estado de la pantalla de edición
 data class NotaEditState(val nota: Note?)

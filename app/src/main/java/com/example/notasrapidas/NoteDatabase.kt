@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
  * Usamos el patrón Singleton para asegurar que exista una sola instancia
  * de la base de datos en toda la app (evita abrir varias conexiones a la vez).
  */
-@Database(entities = [Note::class], version = 1, exportSchema = false)
+@Database(entities = [Note::class], version = 3, exportSchema = false)
 abstract class NoteDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
@@ -26,7 +26,9 @@ abstract class NoteDatabase : RoomDatabase() {
                     context.applicationContext,
                     NoteDatabase::class.java,
                     "notas_rapidas_db" // nombre del archivo físico de la base de datos
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }

@@ -42,7 +42,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `notes` (`id`,`title`,`content`,`timestamp`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR REPLACE INTO `notes` (`id`,`title`,`content`,`imageUri`,`isPinned`,`orderPosition`,`timestamp`) VALUES (nullif(?, 0),?,?,?,?,?,?)";
       }
 
       @Override
@@ -51,7 +51,15 @@ public final class NoteDao_Impl implements NoteDao {
         statement.bindLong(1, entity.getId());
         statement.bindString(2, entity.getTitle());
         statement.bindString(3, entity.getContent());
-        statement.bindLong(4, entity.getTimestamp());
+        if (entity.getImageUri() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getImageUri());
+        }
+        final int _tmp = entity.isPinned() ? 1 : 0;
+        statement.bindLong(5, _tmp);
+        statement.bindLong(6, entity.getOrderPosition());
+        statement.bindLong(7, entity.getTimestamp());
       }
     };
     this.__deletionAdapterOfNote = new EntityDeletionOrUpdateAdapter<Note>(__db) {
@@ -71,7 +79,7 @@ public final class NoteDao_Impl implements NoteDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`timestamp` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `notes` SET `id` = ?,`title` = ?,`content` = ?,`imageUri` = ?,`isPinned` = ?,`orderPosition` = ?,`timestamp` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -80,8 +88,16 @@ public final class NoteDao_Impl implements NoteDao {
         statement.bindLong(1, entity.getId());
         statement.bindString(2, entity.getTitle());
         statement.bindString(3, entity.getContent());
-        statement.bindLong(4, entity.getTimestamp());
-        statement.bindLong(5, entity.getId());
+        if (entity.getImageUri() == null) {
+          statement.bindNull(4);
+        } else {
+          statement.bindString(4, entity.getImageUri());
+        }
+        final int _tmp = entity.isPinned() ? 1 : 0;
+        statement.bindLong(5, _tmp);
+        statement.bindLong(6, entity.getOrderPosition());
+        statement.bindLong(7, entity.getTimestamp());
+        statement.bindLong(8, entity.getId());
       }
     };
   }
@@ -141,8 +157,26 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
+  public Object updateNotes(final List<Note> notes, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __updateAdapterOfNote.handleMultiple(notes);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
   public Flow<List<Note>> getAllNotes() {
-    final String _sql = "SELECT * FROM notes ORDER BY timestamp DESC";
+    final String _sql = "SELECT * FROM notes ORDER BY isPinned DESC, orderPosition ASC, timestamp DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     return CoroutinesRoom.createFlow(__db, false, new String[] {"notes"}, new Callable<List<Note>>() {
       @Override
@@ -153,6 +187,9 @@ public final class NoteDao_Impl implements NoteDao {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
           final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
+          final int _cursorIndexOfImageUri = CursorUtil.getColumnIndexOrThrow(_cursor, "imageUri");
+          final int _cursorIndexOfIsPinned = CursorUtil.getColumnIndexOrThrow(_cursor, "isPinned");
+          final int _cursorIndexOfOrderPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "orderPosition");
           final int _cursorIndexOfTimestamp = CursorUtil.getColumnIndexOrThrow(_cursor, "timestamp");
           final List<Note> _result = new ArrayList<Note>(_cursor.getCount());
           while (_cursor.moveToNext()) {
@@ -163,9 +200,21 @@ public final class NoteDao_Impl implements NoteDao {
             _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
             final String _tmpContent;
             _tmpContent = _cursor.getString(_cursorIndexOfContent);
+            final String _tmpImageUri;
+            if (_cursor.isNull(_cursorIndexOfImageUri)) {
+              _tmpImageUri = null;
+            } else {
+              _tmpImageUri = _cursor.getString(_cursorIndexOfImageUri);
+            }
+            final boolean _tmpIsPinned;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsPinned);
+            _tmpIsPinned = _tmp != 0;
+            final int _tmpOrderPosition;
+            _tmpOrderPosition = _cursor.getInt(_cursorIndexOfOrderPosition);
             final long _tmpTimestamp;
             _tmpTimestamp = _cursor.getLong(_cursorIndexOfTimestamp);
-            _item = new Note(_tmpId,_tmpTitle,_tmpContent,_tmpTimestamp);
+            _item = new Note(_tmpId,_tmpTitle,_tmpContent,_tmpImageUri,_tmpIsPinned,_tmpOrderPosition,_tmpTimestamp);
             _result.add(_item);
           }
           return _result;

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "148064141272",
+    "project_id": "proyecto-final-app-moviles",
+    "storage_bucket": "proyecto-final-app-moviles.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148064141272:android:fe94fb3d20dcb9f40bbcad",
+        "android_client_info": {
+          "package_name": "com.example.notasrapidas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrDlYQ5b-GkxoxI6V5HX1SBYZN3YmJO9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

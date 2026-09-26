@@ -4,7 +4,113 @@
             "outputFile": "com.example.notasrapidas.app-mergeDebugResources-44:/values-zu/values-zu.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\3cc33ce17153df81886ba663baf43bbd\\workspace\\transformed\\ui-release\\res\\values-zu\\values-zu.xml",
+=======
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\4eda1d62c4008f4f91f3a1858757a7f9\\workspace\\transformed\\foundation-release\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,146",
+                        "endColumns": "90,91",
+                        "endOffsets": "141,233"
+                    },
+                    "to": {
+                        "startLines": "107,108",
+                        "startColumns": "4,4",
+                        "startOffsets": "11607,11698",
+                        "endColumns": "90,91",
+                        "endOffsets": "11693,11785"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\d18c1f575554a8ff39cca4b95dda5153\\workspace\\transformed\\play-services-basement-18.5.0\\res\\values-zu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "127",
+                        "endOffsets": "322"
+                    },
+                    "to": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "2306",
+                        "endColumns": "131",
+                        "endOffsets": "2433"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\2dcfbf265dde7b0fc8b90e45eced9488\\workspace\\transformed\\credentials-1.2.0-rc01\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,169",
+                        "endColumns": "113,122",
+                        "endOffsets": "164,287"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "105,219",
+                        "endColumns": "113,122",
+                        "endOffsets": "214,337"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\2ba834fb326c77531ab1c9b065083ef4\\workspace\\transformed\\play-services-base-18.5.0\\res\\values-zu\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,300,472,603,703,867,992,1112,1218,1374,1480,1641,1768,1922,2075,2132,2197",
+                        "endColumns": "106,171,130,99,163,124,119,105,155,105,160,126,153,152,56,64,80",
+                        "endOffsets": "299,471,602,702,866,991,1111,1217,1373,1479,1640,1767,1921,2074,2131,2196,2277"
+                    },
+                    "to": {
+                        "startLines": "13,14,15,16,17,18,19,20,22,23,24,25,26,27,28,29,30",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1249,1360,1536,1671,1775,1943,2072,2196,2438,2598,2708,2873,3004,3162,3319,3380,3449",
+                        "endColumns": "110,175,134,103,167,128,123,109,159,109,164,130,157,156,60,68,84",
+                        "endOffsets": "1355,1531,1666,1770,1938,2067,2191,2301,2593,2703,2868,2999,3157,3314,3375,3444,3529"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\8393103d3ad54fc8c679bdfa7b988f1e\\workspace\\transformed\\core-1.13.1\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,257,356,459,565,672,785",
+                        "endColumns": "97,103,98,102,105,106,112,100",
+                        "endOffsets": "148,252,351,454,560,667,780,881"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,103",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "342,440,544,643,746,852,959,11233",
+                        "endColumns": "97,103,98,102,105,106,112,100",
+                        "endOffsets": "435,539,638,741,847,954,1067,11329"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\a6f7624ab87a6f13dbe68f86359c0ecd\\workspace\\transformed\\browser-1.4.0\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,167,275,387",
+                        "endColumns": "111,107,111,111",
+                        "endOffsets": "162,270,382,494"
+                    },
+                    "to": {
+                        "startLines": "31,35,36,37",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3534,3946,4054,4166",
+                        "endColumns": "111,107,111,111",
+                        "endOffsets": "3641,4049,4161,4273"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\82048d7c15b166fddb8a36deeb37bf8c\\workspace\\transformed\\ui-release\\res\\values-zu\\values-zu.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +127,11 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\0e29671838edf399013196b22fef9ae8\\workspace\\transformed\\foundation-release\\res\\values-zu\\values-zu.xml",
+=======
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\77c566ccbc9fbe273e079c2758a4f461\\workspace\\transformed\\material3-release\\res\\values-zu\\values-zu.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -36,6 +146,7 @@
                         "endColumns": "90,91",
                         "endOffsets": "8727,8819"
                     }
+<<<<<<< Updated upstream
                 },
                 {
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\4152dab7ba1df413605d3a7c4fa00d2b\\workspace\\transformed\\core-1.13.1\\res\\values-zu\\values-zu.xml",
@@ -70,6 +181,8 @@
                         "endColumns": "117,118,114,116,102,97,114,136,116,154,84,99,91,100,119,121,104,143,134,136,171,131,125,124,127,92,99,127,141,98,101,108,139,140,109,101,77,94,96,85,85,105,79,84,107,101,103,97,87,105,105,101,121,79,106,99",
                         "endOffsets": "1596,1715,1830,1947,2050,2148,2263,2400,2517,2672,2757,2857,2949,3050,3170,3292,3397,3541,3676,3813,3985,4117,4243,4368,4496,4589,4689,4817,4959,5058,5160,5269,5409,5550,5660,5762,5840,5935,6032,6118,6204,6310,6390,6475,6583,6685,6789,6887,6975,7081,7187,7289,7411,7491,7598,7698"
                     }
+=======
+>>>>>>> Stashed changes
                 }
             ]
         }

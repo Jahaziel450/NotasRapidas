@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 #Thu Aug 27 19:18:32 CST 2026
+=======
+#Fri Sep 25 20:06:06 CST 2026
+>>>>>>> Stashed changes
 base.0=C\:\\Users\\Jahaz\\Desktop\\NotasRapidas\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Jahaz\\Desktop\\NotasRapidas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\Jahaz\\Desktop\\NotasRapidas\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex

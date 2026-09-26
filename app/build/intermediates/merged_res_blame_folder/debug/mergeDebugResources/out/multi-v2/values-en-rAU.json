@@ -4,7 +4,62 @@
             "outputFile": "com.example.notasrapidas.app-mergeDebugResources-44:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\0e29671838edf399013196b22fef9ae8\\workspace\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+=======
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\2dcfbf265dde7b0fc8b90e45eced9488\\workspace\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,167",
+                        "endColumns": "111,113",
+                        "endOffsets": "162,276"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "105,217",
+                        "endColumns": "111,113",
+                        "endOffsets": "212,326"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\8393103d3ad54fc8c679bdfa7b988f1e\\workspace\\transformed\\core-1.13.1\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,151,253,352,451,555,658,774",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "146,248,347,446,550,653,769,870"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,85",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "331,427,529,628,727,831,934,8622",
+                        "endColumns": "95,101,98,98,103,102,115,100",
+                        "endOffsets": "422,524,623,722,826,929,1045,8718"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\a6f7624ab87a6f13dbe68f86359c0ecd\\workspace\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    },
+                    "to": {
+                        "startLines": "13,17,18,19",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "1224,1602,1699,1808",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "1317,1694,1803,1902"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\4eda1d62c4008f4f91f3a1858757a7f9\\workspace\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -21,6 +76,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\4152dab7ba1df413605d3a7c4fa00d2b\\workspace\\transformed\\core-1.13.1\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -39,6 +95,9 @@
                 },
                 {
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\f0966c3625e7c24f37c4f5520ac8d71b\\workspace\\transformed\\material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
+=======
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\77c566ccbc9fbe273e079c2758a4f461\\workspace\\transformed\\material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -69,6 +128,23 @@
                         "startOffsets": "824,916,998,1092,1191,1278,1360,7458,7547,7631,7696,7760,7838,7920,8094,8171,8237",
                         "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
                         "endOffsets": "911,993,1087,1186,1273,1355,1444,7542,7626,7691,7755,7833,7915,7988,8166,8232,8353"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\82048d7c15b166fddb8a36deeb37bf8c\\workspace\\transformed\\ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,197,279,373,472,559,641,730,819,903,968,1032,1110,1192,1265,1342,1408",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "192,274,368,467,554,636,725,814,898,963,1027,1105,1187,1260,1337,1403,1524"
+                    },
+                    "to": {
+                        "startLines": "11,12,14,15,16,20,21,78,79,80,81,82,83,84,86,87,88",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1050,1142,1322,1416,1515,1907,1989,8087,8176,8260,8325,8389,8467,8549,8723,8800,8866",
+                        "endColumns": "91,81,93,98,86,81,88,88,83,64,63,77,81,72,76,65,120",
+                        "endOffsets": "1137,1219,1411,1510,1597,1984,2073,8171,8255,8320,8384,8462,8544,8617,8795,8861,8982"
                     }
                 }
             ]

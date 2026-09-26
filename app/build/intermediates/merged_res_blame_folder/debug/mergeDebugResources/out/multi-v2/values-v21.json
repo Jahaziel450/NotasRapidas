@@ -4,7 +4,11 @@
             "outputFile": "com.example.notasrapidas.app-mergeDebugResources-44:/values-v21/values-v21.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\4152dab7ba1df413605d3a7c4fa00d2b\\workspace\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
+=======
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\8393103d3ad54fc8c679bdfa7b988f1e\\workspace\\transformed\\core-1.13.1\\res\\values-v21\\values-v21.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -12,6 +16,25 @@
                         "endLines": "2,3,4,5,6,7,8,9,12,17",
                         "endColumns": "117,63,66,63,115,125,125,127,12,12",
                         "endOffsets": "168,232,299,363,479,605,731,859,1031,1383"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jahaz\\.gradle\\caches\\9.3.0\\transforms\\204d3632533d98ccfd6ea7e8a0044b98\\workspace\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "543"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "864",
+                        "endLines": "17",
+                        "endColumns": "12",
+                        "endOffsets": "1352"
                     }
                 }
             ]
